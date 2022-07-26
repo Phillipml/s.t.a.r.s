@@ -7,11 +7,19 @@ import Button from '../../components/form/Button'
 import {FaGithub} from 'react-icons/fa'
 
 
+
 function Login(){
-    const mapping = (type, name, id) => { return { type,name,id }};
+    const mapping = (type, name, id) => { return { type,name,id}};
     const submit = (e)=>{
-        alert('tutuuuu')
-        e.preventDefault();
+        e.preventDefault()
+        var name = document.getElementById('loginName').value
+        var password = document.getElementById('password').value
+        
+        if(name == 'chris redfield' && password == '123456'){
+            alert('yes')
+        }else{
+            alert('no')
+        }
     }
     return(
         <div>
@@ -24,7 +32,8 @@ function Login(){
                 <p className={styles.insert_credentials} >
                     Please insert your credentials correctly to access this terminal</p>
                 <div className={styles.center_itens}id='center_itens'>
-                <Input inputData={mapping('text', 'name', 'loginName')}/>
+                <Input inputData={mapping('text', 'name', 'loginName','handleChange', 'user')}
+        />
                 <Input inputData={mapping('password', 'password', 'password')} />
                 <Button text='Enter' event='submit'/>
                 </div>
@@ -36,8 +45,13 @@ function Login(){
                 <br/>
                 This is a fan by fan project<br/>
                 ©CAPCOM U.S.A., INC. ALL RIGHTS RESERVED </p>
+
+ 
+
+     
            
         </div>
+        
     )
 }
 export default Login
