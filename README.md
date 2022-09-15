@@ -9,7 +9,7 @@ The project consists of creating a system with files that the game shows us.
 
 ## How to Install
 
-You need to install some dependencies after clone my repo
+You need to install some dependencies after you clone my repo
 
 ```bash
   npm install react-router-dom react-icons proton-engine raf-manager --save 
