@@ -9,14 +9,7 @@ The project consists of creating a system with files that the game shows us.
 
 ## How to Install
 
-Install my-project with npm
-
-```bash
-  npm install my-project
-  cd my-project
-  git clone 
-```
-Then you need to install some dependencies
+You need to install some dependencies after clone my repo
 
 ```bash
   npm install react-router-dom react-icons proton-engine raf-manager --save 
