@@ -53,6 +53,27 @@ app.post("/api/login", async (req, res) => {
     return res.status(401).json({ error: "Invalid email or password" });
   }
 
+  app.get("/api/user", async (req, res) => {
+    const token = req.headers.authorization;
+
+    if (!token) {
+      return res.status(401).json({ error: "No token provided" });
+    }
+
+    try {
+      const decoded = jwt.verify(token, jwtSecret);
+      const user = await User.findById(decoded.userId);
+
+      if (!user) {
+        return res.status(404).json({ error: "User not found" });
+      }
+
+      res.json({ username: user.username });
+    } catch (error) {
+      res.status(401).json({ error: "Invalid token" });
+    }
+  });
+
   const token = jwt.sign({ userId: user._id }, jwtSecret, { expiresIn: "1h" });
   res.json({ token });
 });
