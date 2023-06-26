@@ -1,3 +1,5 @@
+import React from "react";
+
 function Home({ username, onClick }) {
   return (
     <div>
@@ -6,4 +8,5 @@ function Home({ username, onClick }) {
     </div>
   );
 }
+
 export default Home;
