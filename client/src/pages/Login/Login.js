@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import Logo from "../../components/logo/Logo.js";
 import styles from "./Login.module.css";
 import effects from "../../components/css_effects/css_effects.module.css";
@@ -31,7 +32,7 @@ function LoginForm({ onLogin, API_URL }) {
   };
 
   return (
-    <>
+    <div className={styles.bg}>
       <div className={`${effects.scaleIn} ${styles.logo}`}>
         <Logo />
       </div>
@@ -58,9 +59,12 @@ function LoginForm({ onLogin, API_URL }) {
           <button className={effects.btn} type="submit">
             Login
           </button>
+          <p>
+            Your first day on S.T.A.R.S? Try to <a href="/register">register</a>
+          </p>
         </div>
       </form>
-    </>
+    </div>
   );
 }
 
