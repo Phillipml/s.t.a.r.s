@@ -22,13 +22,18 @@ function App() {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await fetch(`${API_URL}/user/${loggedIn}`, {
+        const response = await fetch(`${API_URL}/user`, {
           headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            Authorization: `Bearer ${loggedIn}`,
           },
         });
-        const data = await response.json();
-        setUsername(data.username);
+
+        if (response.ok) {
+          const data = await response.json();
+          setUsername(data.username);
+        } else {
+          console.log("Failed to fetch user:", response.statusText);
+        }
       } catch (error) {
         console.log("Failed to fetch user:", error);
       }

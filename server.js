@@ -108,33 +108,29 @@ app.post("/api/login", async (req, res) => {
 
 /**
  * @openapi
- * /api/user/{username}:
+ * /api/user:
  *   get:
- *     summary: Get a user by username
- *     parameters:
- *       - in: path
- *         name: username
- *         schema:
- *           type: string
- *         required: true
- *         description: Username of the user to retrieve
+ *     summary: Get the current user
  *     responses:
  *       200:
  *         description: Successful retrieval of the user
- *       404:
- *         description: User not found
+ *       401:
+ *         description: Unauthorized access
  */
-app.get("/api/user/:username", async (req, res) => {
+app.get("/api/user", async (req, res) => {
   try {
-    const user = await User.findOne({ username: req.params.username });
+    const token = req.headers.authorization.split(" ")[1];
+    const decodedToken = jwt.verify(token, jwtSecret);
+    const userId = decodedToken.userId;
+    const user = await User.findById(userId);
 
     if (!user) {
       return res.status(404).json({ error: "User not found" });
     }
 
-    res.json(user);
+    res.json({ username: user.username });
   } catch (error) {
-    res.status(500).json({ error: "Failed to retrieve the user" });
+    res.status(401).json({ error: "Unauthorized access" });
   }
 });
 
