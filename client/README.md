@@ -1,70 +1,129 @@
-# Getting Started with Create React App
+# S.T.A.R.S
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a client-server application that allows users to register, login, and access a home page. The server is built with Node.js and Express, while the client is built with React. The server provides RESTful APIs for user registration, login, user retrieval, and user deletion. The client consumes these APIs to provide a user interface for user authentication and interaction.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Technologies Used](#technologies-used)
+- [Prerequisites](#prerequisites)
+- [Getting Started](#getting-started)
+- [API Endpoints](#api-endpoints)
+- [Client](#client)
+- [Usage](#usage)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Node.js
+- Express
+- MongoDB
+- Mongoose
+- Bcrypt
+- JSON Web Tokens (JWT)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Prerequisites
 
-### `npm test`
+- Node.js installed
+- MongoDB instance running
+- Environment variables set up (`.env` file) with the following variables:
+  - `PORT` - Port number for the server (default: 3001)
+  - `DB_URL` - MongoDB connection URL
+  - `JWT_SECRET` - Secret key for JWT
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+To get started with the project, follow the steps below:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git clone https://github.com/Phillipml/s.t.a.r.s.git
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Install dependencies:
 
-### `npm run eject`
+```bash
+cd s.t.a.r.s
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Set up the environment variables:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Create a .env file in the root directory of the project and provide the required variables:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+PORT=3001
+DB_URL=mongodb://localhost:27017/your-database
+JWT_SECRET=your-secret-key
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Start the server:
 
-## Learn More
+```bash
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### API Endpoints
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The server provides the following API endpoints:
 
-### Code Splitting
+POST /api/register - Register a new user
+POST /api/login - Login and get an access token
+GET /api/user - Get the current user
+GET /api/users - Get all users from the database
+DELETE /api/user/:username - Delete a user by username
+Client
+The client is built with React and provides a user interface for user authentication and interaction. It includes login and registration forms, a home page, and basic navigation.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Technologies Used
 
-### Analyzing the Bundle Size
+React
+React Router
+Prerequisites
+Node.js installed
+Getting Started
+To start the client, follow the steps below:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Install dependencies:
 
-### Making a Progressive Web App
+```bash
+cd client
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Start the client:
 
-### Advanced Configuration
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Pages
 
-### Deployment
+Login: Allows users to log in and obtain an access token.
+Register: Allows new users to create an account.
+Home: Displays a welcome message and a logout button for authenticated users.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Usage
 
-### `npm run build` fails to minify
+Access the client application by visiting http://localhost:3000 in your web browser.
+Register a new user by filling out the registration form.
+Log in using the registered credentials.
+Upon successful login, you will be redirected to the home page, where you can see a welcome message with your username.
+To log out, click the "Logout" button.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## License
+
+This project is licensed under the MIT License.
+
+### Acknowledgements
+
+Node.js
+Express
+MongoDB
+Mongoose
+Bcrypt
+JSON Web Tokens (JWT)
+React
+React Router
+vbnet
