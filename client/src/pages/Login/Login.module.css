@@ -1,0 +1,81 @@
+
+.position{
+    position: absolute;
+}
+
+.logo{
+  
+    width: 15rem;
+    height: 15rem;
+    margin: 2rem auto;
+    transform: scale(0);
+}
+.btn{
+    position: relative;
+    left: 50%;
+    top: 38%;
+    transform: translateX(-40%);
+    width: 7rem;
+    height: 2rem;
+    border: unset;
+    color: #030860;
+    background-color: #c4c4c4;
+    cursor: pointer;
+    transition: .5s;
+}
+.btn:hover{
+    color: #c4c4c4;
+    background-color: #01043a ;
+    border: 2px solid #c4c4c4;
+}
+.insert_credentials{
+    text-align: center;
+    color: white;
+    font-weight: 200;
+}
+form{
+    margin: 2rem auto;
+    width: 50%;
+    height: 15rem;
+    border: 1px solid white;
+    background-color: #03075e;
+    transform: scale(0);
+}
+form > p{
+    margin-top: 4%;
+}
+
+.center_itens{
+    display: grid;
+    justify-content: center;
+    position: absolute;
+    top:55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.copyright{
+    font-size: 10px;
+    font-weight: 200;
+    position: fixed;
+    bottom:5%;
+    color:white;
+    animation-name: appear;
+    animation-duration: .8s;
+    animation-fill-mode: forwards;
+}
+.copyright > a{
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+@keyframes appear {
+    from {
+      right: -100%;
+    }
+    to {
+      right: 2%;
+      
+    }
+  }
