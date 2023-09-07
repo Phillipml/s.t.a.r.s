@@ -19,8 +19,10 @@ function LoginForm({ onLogin, API_URL }) {
       });
 
       const data = await response.json();
+
       if (response.ok) {
         localStorage.setItem("token", data.token);
+
         onLogin();
       } else {
         alert(data.error);

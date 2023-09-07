@@ -123,7 +123,7 @@ app.get("/api/user", async (req, res) => {
     const decodedToken = jwt.verify(token, jwtSecret);
     const userId = decodedToken.userId;
     const user = await User.findById(userId);
-
+    console.log(user);
     if (!user) {
       return res.status(404).json({ error: "User not found" });
     }

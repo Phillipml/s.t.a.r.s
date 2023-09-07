@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Logo from "../../components/logo/Logo";
 import effects from "../../components/css_effects/css_effects.module.css";
-function RegisterForm({ API_URL }) {
+import styles from "./Register.module.css";
+function Register({ API_URL }) {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -30,10 +31,10 @@ function RegisterForm({ API_URL }) {
 
   return (
     <div>
-      <div className={`${effects.scaleIn} ${effects.logo}`}>
+      <div className={`${effects.logo} ${effects.scaleIn}`}>
         <Logo />
       </div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={effects.scaleIn}>
         <input
           type="email"
           placeholder="Email"
@@ -58,4 +59,4 @@ function RegisterForm({ API_URL }) {
     </div>
   );
 }
-export default RegisterForm;
+export default Register;

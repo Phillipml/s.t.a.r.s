@@ -1,21 +1,20 @@
-.bg{
+.bg {
   background-color: #00033f;
   height: 100%;
   width: 100%;
   position: absolute;
 }
 
-.logo{
-  
+.logo {
   width: 15rem;
   height: 15rem;
   margin: 2rem auto;
   transform: scale(0);
 }
-.zindex{
+.zindex {
   z-index: 199;
 }
-.input{
+.input {
   display: block;
   width: 50%;
   min-width: 250px;
@@ -27,12 +26,11 @@
   color: #030860;
   background-color: #c4c4c4;
 }
-.input:focus{
+.input:focus {
   background-color: #a3aaff;
   outline: unset;
-
 }
-.btn{
+.btn {
   position: relative;
   left: 50%;
   top: 38%;
@@ -43,63 +41,63 @@
   color: #030860;
   background-color: #c4c4c4;
   cursor: pointer;
-  transition: .5s;
+  transition: 0.5s;
 }
-.btn:hover{
+.btn:hover {
   color: #c4c4c4;
-  background-color: #01043a ;
+  background-color: #01043a;
   border: 2px solid #c4c4c4;
 }
-.blink{
-    animation: blink 3s infinite;
+.blink {
+  animation: blink 3s infinite;
 }
 @keyframes blink {
-    0%{opacity: 0;}
- 
-    100%{opacity: 1;}
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
-.fadeIn{
-    animation-name: fadeIn;
-    animation-duration: .8s;
-    
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 0.8s;
 }
 @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-      
-    }
+  from {
+    opacity: 0;
   }
-.scaleIn{
-    animation-name: scaleIn;
-    animation-duration: .8s;
-    animation-delay: .5s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+  to {
+    opacity: 1;
+  }
+}
+.scaleIn {
+  animation-name: scaleIn;
+  animation-duration: 0.8s;
+  animation-delay: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 @keyframes scaleIn {
-    from {
-      transform: scale(0);
-    }
-    to {
-      transform: scale(1);
-      
-    }
+  from {
+    transform: scale(0);
   }
-.darkBlueBlink{
-    animation-name: darkBlueBlink;
-    animation-duration: .8s;
-    animation-delay: .5s;
-    animation-iteration-count: infinite;
+  to {
+    transform: scale(1);
+  }
+}
+.darkBlueBlink {
+  animation-name: darkBlueBlink;
+  animation-duration: 0.8s;
+  animation-delay: 0.5s;
+  animation-iteration-count: infinite;
 }
 @keyframes darkBlueBlink {
-    from {
-        background-color: #03075e;
-    }
-    to {
-        background-color: #020202;
-      
-    }
+  from {
+    background-color: #03075e;
   }
+  to {
+    background-color: #020202;
+  }
+}
