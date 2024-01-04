@@ -30,6 +30,10 @@ function LoginForm({ onLogin, API_URL }) {
     } catch (error) {
       console.error(error);
       alert("An error occurred. Please try again later.");
+      function stopDefAction(evt) {
+        evt.preventDefault();
+      }
+      stopDefAction();
     }
   };
 
@@ -39,10 +43,10 @@ function LoginForm({ onLogin, API_URL }) {
         <Logo />
       </div>
       <form onSubmit={handleSubmit} className={effects.scaleIn}>
-        <p className={styles.insert_credentials}>
-          Please insert your credentials correctly to access this terminal
-        </p>
         <div className={styles.center_itens} id="center_itens">
+          <p className={styles.insert_credentials}>
+            Please insert your credentials correctly to access this terminal
+          </p>
           <input
             className={effects.input}
             type="email"
@@ -61,7 +65,7 @@ function LoginForm({ onLogin, API_URL }) {
           <button className={effects.btn} type="submit">
             Login
           </button>
-          <p>
+          <p className={styles.copyright}>
             Your first day on S.T.A.R.S? Try to <a href="/register">register</a>
           </p>
         </div>
